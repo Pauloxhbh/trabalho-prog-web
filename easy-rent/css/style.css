@@ -4,6 +4,10 @@ body {
   background-color: #ffffff;
 }
 
+.avatar-img{
+  width: 200px;
+}
+
 .layout_padding {
   padding-top: 90px;
   padding-bottom: 90px;
