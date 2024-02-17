@@ -1,8 +1,6 @@
 Alterações Easy Rent:
 
-1. Alterar localização do mapa
-2. Alterar imagens das cidades
-3. Tamanho, opacidade
-4. Criar uma página de detalhes
-5. No formulário, adicionar um capo de select (cidade)
-6. Criar um alerta para o botão enviar
+- Tamanho, opacidade
+- Criar uma página de detalhes
+- No formulário, adicionar um capo de select (cidade)
+- Criar um alerta para o botão enviar
