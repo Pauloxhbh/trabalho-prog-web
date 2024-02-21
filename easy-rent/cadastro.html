@@ -109,7 +109,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <form action="">
+          
             <div>
               <input type="text" placeholder="Usuário" />
             </div>
@@ -141,12 +141,18 @@
                 <option value="maragogi"> Maragogi</option>
               </select>
             </div>
-            <div class="d-flex ">
-              <button id="btn-enviar">
-                CRIAR CONTA
-              </button>
-            </div>
-          </form>
+            
+              <div class="d-flex ">
+                <button id="btn-enviar">
+                  CRIAR CONTA
+                </button>
+              </div>
+              <div id="mensagem" class="alert alert-success align-items-center hidden" role="alert">
+                <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                <div>
+                  Conta criada com sucesso!
+                </div>
+              </div>
         </div>
         <div class="col-md-6">
         </div>
@@ -325,9 +331,11 @@
   <script>
     var btnEnviar = document.getElementById('btn-enviar');
 
-    btnEnviar.addEventListener('click', function(){
-      alert('Conta criada com sucesso!');
-    });
+    btnEnviar.addEventListener('click', function() {
+  const mensagemDiv = document.getElementById('mensagem');
+  mensagemDiv.classList.remove('hidden');
+  mensagemDiv.classList.add('d-flex');
+});
     var nav = $("#navbarSupportedContent");
     var btn = $(".custom_menu-btn");
     btn.click
