@@ -22,6 +22,15 @@ body {
   padding-bottom: 45px;
 }
 
+.alert-success{
+  margin-top: 10%;
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
 .layout_padding2-bottom {
   padding-bottom: 45px;
 }
