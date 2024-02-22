@@ -27,6 +27,10 @@ body {
   display: none;
 }
 
+.alert-text{
+  padding-left: 10px;
+}
+
 .hidden {
   display: none;
 }
