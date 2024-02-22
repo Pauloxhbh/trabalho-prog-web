@@ -4,8 +4,16 @@ body {
   background-color: #ffffff;
 }
 
-.avatar-img{
+.client-avatar{
   width: 200px;
+}
+
+.mb-4{
+  padding-top: 10px;
+}
+
+.perfil-input-title{
+  padding-bottom: 10px;
 }
 
 .layout_padding {
