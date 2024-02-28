@@ -109,26 +109,27 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
+          <form id='form'>
           <div>
-            <input type="text" placeholder="Usuário" />
+            <input type="text" placeholder="Usuário" id="usuario" />
           </div>
           <div>
-            <input type="text" placeholder="Nome" />
+          <input type="text" placeholder="Nome" id="nome"/>
           </div>
           <div>
-            <input type="email" placeholder="Email" />
+            <input type="email" placeholder="Email" id="email"/>
           </div>
           <div>
-            <input type="password" placeholder="Senha" id="pa_senha" />
+            <input type="password" placeholder="Senha" id="senha" />
           </div>
           <div>
-            <input type="password" placeholder="Confirme a senha" id="pa_con_senha">
+            <input type="password" placeholder="Confirme a senha" id="conf_senha">
           </div>
           <div>
-            <input type="text" placeholder="Telefone" />
+            <input type="number" placeholder="Telefone" id="telefone">
           </div>
           <div>
-            <select name="local" id="selectLocal" class="selocal">
+            <select name="local" id="selectLocal" class="setLocal">
               <option value="padrao" disabled selected>Selecione uma cidade</option>
               <option value="maceio"> Maceió</option>
               <option value="rio-Largo"> Rio Largo</option>
@@ -152,6 +153,7 @@
               <button id="btn-enviar">
                 CRIAR CONTA
               </button>
+          </form>
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
               <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
@@ -340,11 +342,71 @@
   <script>
     var btnEnviar = document.getElementById('btn-enviar');
 
-    btnEnviar.addEventListener('click', function() {
-      const mensagemDiv = document.getElementById('mensagem');
+    
+    document.getElementById('form').addEventListener('submit', function(event){
+      event.preventDefault();
+
+      var senha = document.getElementById('senha')
+      var email = document.getElementById('email')
+      var conf_senha = document.getElementById('conf_senha')
+      var usuario = document.getElementById('usuario')
+      var nome = document.getElementById('nome')
+      var telefone = document.getElementById('telefone')
+      var selectLocal = document.getElementById('selectLocal')
+      var todasCondicoesAtendidas = true;
+
+
+if (senha.value.length < 8) {
+    alert('A senha deve ter no mínimo 8 caracteres');
+    todasCondicoesAtendidas = false;
+}
+
+
+if (senha.value !== conf_senha.value) {
+    alert('As senhas não conferem');
+    todasCondicoesAtendidas = false;
+}
+localStorage.setItem('senha', senha);
+
+if (usuario.value.length < 4) {
+    alert('O usuário deve ter no mínimo 4 caracteres');
+    todasCondicoesAtendidas = false;
+}
+localStorage.setItem('usuario', usuario);
+if (nome.value.length < 4) {
+    alert('O nome deve ter no mínimo 4 caracteres');
+    todasCondicoesAtendidas = false;
+}
+localStorage.setItem('nome', nome);
+if (email.value.length < 4) {
+    alert('Preencha o campo email');
+    todasCondicoesAtendidas = false;
+}
+localStorage.setItem('email', email);
+if (telefone.value.length < 8) {
+    alert('Preencha o campo telefone');
+    todasCondicoesAtendidas = false;
+}
+localStorage.setItem('telefone', telefone);
+if (selectLocal.value === 'padrao') {
+    alert('Selecione uma cidade');
+    todasCondicoesAtendidas = false;
+}
+
+
+if (todasCondicoesAtendidas) {
+  window.location.href = 'login.html'
+  const mensagemDiv = document.getElementById('mensagem');
       mensagemDiv.classList.remove('hidden');
       mensagemDiv.classList.add('d-flex');
-    });
+}
+});
+  
+  
+
+
+    
+   
     var nav = $("#navbarSupportedContent");
     var btn = $(".custom_menu-btn");
     btn.click
@@ -369,3 +431,5 @@
 </body>
 
 </html>
+
+
