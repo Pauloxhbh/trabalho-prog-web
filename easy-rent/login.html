@@ -316,22 +316,23 @@
 
     })
   </script>
-  <script>
-    var btnEntrar= document.getElementById('btn_entrar')
 
-btnEntrar.addEventListener(click,entrar())
 
-function entrar(){
- var l_usuario = localStorage.getItem('usuario')
- var l_senha = localStorage.getItem('senha')
+<script>
+ var btnEntrar = document.getElementById('btn_entrar');
 
-if(l_usuario === document.getElementById(en_usuario).value && l_senha === document.getElementById(en_senha).value){
-  window.location.href = 'perfil.html';
-}
-else{
-alert('usuario ou senha incorreto(a)')
-}
-}
+btnEntrar.addEventListener('click', function() {
+  var l_usuario = localStorage.getItem('usuario');
+  var l_senha = localStorage.getItem('senha');
+  var en_senha = document.getElementById('en_senha').value;
+  var en_usuario = document.getElementById('en_usuario').value;
+
+  if (en_usuario === l_usuario && en_senha === l_senha) {
+    window.location.href = 'perfil.html';
+  } else {
+    alert('Usuário ou senha incorretos');
+  }
+});
 
   </script>
 
