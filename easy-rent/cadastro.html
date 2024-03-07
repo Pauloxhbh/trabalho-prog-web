@@ -390,33 +390,33 @@
         alert('As senhas não conferem');
         todasCondicoesAtendidas = false;
       }
-      localStorage.setItem('senha', senha);
+      localStorage.setItem('l-senha', senha);
 
       if (usuario.length < 4) {
         alert('O usuário deve ter no mínimo 4 caracteres');
         todasCondicoesAtendidas = false;
       }
-      localStorage.setItem('usuario', usuario);
+      localStorage.setItem('l-usuario', usuario);
       if (nome.length < 4) {
         alert('O nome deve ter no mínimo 4 caracteres');
         todasCondicoesAtendidas = false;
       }
-      localStorage.setItem('nome', nome);
+      localStorage.setItem('l-nome', nome);
       if (email.length < 4) {
         alert('Preencha o campo email');
         todasCondicoesAtendidas = false;
       }
-      localStorage.setItem('email', email);
+      localStorage.setItem('l-email', email);
       if (telefone.length < 8) {
         alert('Preencha o campo telefone');
         todasCondicoesAtendidas = false;
       }
-      localStorage.setItem('telefone', telefone);
+      localStorage.setItem('l-telefone', telefone);
       if (selectLocal === 'padrao') {
         alert('Selecione uma cidade');
         todasCondicoesAtendidas = false;
       }
-      localStorage.setItem('selectLocal', selectLocal);
+      localStorage.setItem('l-selectLocal', selectLocal);
 
       if (todasCondicoesAtendidas) {
         window.location.href = 'login.html';
