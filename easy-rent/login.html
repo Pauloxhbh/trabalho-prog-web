@@ -295,8 +295,6 @@
     });
   </script>
   <script>
-
-
     var nav = $("#navbarSupportedContent");
     var btn = $(".custom_menu-btn");
     btn.click
@@ -319,21 +317,20 @@
 
 
 <script>
- var btnEntrar = document.getElementById('btn_entrar');
+  var btnEntrar = document.getElementById('btn_entrar');
 
-btnEntrar.addEventListener('click', function() {
-  var l_usuario = localStorage.getItem('l-usuario');
-  var l_senha = localStorage.getItem('l-senha');
-  var en_senha = document.getElementById('en_senha').value;
-  var en_usuario = document.getElementById('en_usuario').value;
+  btnEntrar.addEventListener('click', function() {
+    var l_usuario = localStorage.getItem('l-usuario');
+    var l_senha = localStorage.getItem('l-senha');
+    var en_senha = document.getElementById('en_senha').value;
+    var en_usuario = document.getElementById('en_usuario').value;
 
-  if (en_usuario === l_usuario && en_senha === l_senha) {
-    window.location.href = 'perfil.html';
-  } else {
-    alert('Usuário ou senha incorretos');
-  }
-});
-
+    if (en_usuario === l_usuario && en_senha === l_senha) {
+      window.location.href = 'perfil.html';
+    } else {
+      alert('Usuário ou senha incorretos');
+    }
+  });
   </script>
 
 </body>

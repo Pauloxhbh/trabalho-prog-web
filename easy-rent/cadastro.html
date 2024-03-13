@@ -366,7 +366,6 @@
   <script>
     var btnEnviar = document.getElementById('btn-enviar');
 
-
     document.getElementById('form').addEventListener('submit', function (event) {
       event.preventDefault();
 
@@ -379,12 +378,10 @@
       var selectLocal = document.getElementById('selectLocal').value;
       var todasCondicoesAtendidas = true;
 
-
       if (senha.length < 8) {
         alert('A senha deve ter no mínimo 8 caracteres');
         todasCondicoesAtendidas = false;
       }
-
 
       if (senha.value !== conf_senha.value) {
         alert('As senhas não conferem');
@@ -420,10 +417,8 @@
 
       if (todasCondicoesAtendidas) {
         window.location.href = 'login.html';
-  
       }
     });
-
 
   //const mensagemDiv = document.getElementById('mensagem');
         //mensagemDiv.classList.remove('hidden');
@@ -433,5 +428,4 @@
 </body>
 </body>
 
-</html> 
-   
+</html>
