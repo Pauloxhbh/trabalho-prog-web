@@ -102,34 +102,74 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <div id="div_usuario">
-                        <h5 class="perfil-input-title">Usuário: <span id="usuario"></span></h5>
-                    </div>
-                    <div id="div_nome">
-                        <h5 class="perfil-input-title">Nome: <span id="nome"></span></h5>
-                    </div>
-                    <div id="div_email">
-                        <h5 class="perfil-input-title">Email: <span id="email"></span></h5>
-                    </div>
-                    <div id="div_telefone">
-                        <h5 class="perfil-input-title">Telefone: <span id="telefone"></span></h5>
-                    </div>
-                    <div id="div_cidade">
-                        <h5 class="perfil-input-title">Cidade: <span id="cidade"></span></h5>
-                    </div>
-
-                    <div class="d-flex ">
-                    
-                    </div>
-                    <div id="mensagem" class="alert alert-success align-items-center hidden" role="alert">
-                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"
-                            aria-label="Success:">
-                            <use xlink:href="#check-circle-fill" />
-                        </svg>
-                        <div class="alert-text">
-                            Alterações salvas com sucesso!
+                    <form>
+                        <div class="row mb-3">
+                            <label for="usuarioInput" class="col-sm-2 col-form-label">Usuário: </label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" id="usuarioInput">
+                            </div>
                         </div>
-                    </div>
+                        <div class="row mb-3">
+                            <label for="nomeInput" class="col-sm-2 col-form-label">Nome: </label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" id="nomeInput">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="emailInput" class="col-sm-2 col-form-label">Email: </label>
+                            <div class="col-sm-10">
+                            <input type="email" class="form-control" id="emailInput">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="senhaInput" class="col-sm-2 col-form-label">Senha: </label>
+                            <div class="col-sm-10">
+                            <input type="password" class="form-control" id="senhaInput" placeholder="Senha">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="telefoneInput" class="col-sm-2 col-form-label">Telefone: </label>
+                            <div class="col-sm-10">
+                            <input type="number" class="form-control" id="telefoneInput">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="cidadeInput" class="col-sm-2 col-form-label">Cidade: </label>
+                            <div class="col-sm-10">
+                            <input type="text" class="form-control" id="cidadeInput">
+                            </div>
+                        </div>
+                        <!-- <div id="div_usuario">
+                            <h5 class="perfil-input-title">Usuário: <span id="usuario"></span></h5>
+                        </div>
+                        <div id="div_nome">
+                            <h5 class="perfil-input-title">Nome: <span id="nome"></span></h5>
+                        </div>
+                        <div id="div_email">
+                            <h5 class="perfil-input-title">Email: <span id="email"></span></h5>
+                        </div>
+                        <div id="div_telefone">
+                            <h5 class="perfil-input-title">Telefone: <span id="telefone"></span></h5>
+                        </div>
+                        <div id="div_cidade">
+                            <h5 class="perfil-input-title">Cidade: <span id="cidade"></span></h5>
+                        </div> -->
+
+                        <div class="d-flex ">
+                            <button id="btn-enviar">
+                                SALVAR
+                            </button>
+                        </div>
+                        <div id="mensagem" class="alert alert-success align-items-center hidden" role="alert">
+                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"
+                                aria-label="Success:">
+                                <use xlink:href="#check-circle-fill" />
+                            </svg>
+                            <div class="alert-text">
+                                Alterações salvas com sucesso!
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -327,29 +367,37 @@
     <script>
         // Carregar e exibir dados do localStorage
         document.addEventListener("DOMContentLoaded", function () {
-            var cidade = localStorage.getItem('l-selectLocal'); // Corrigido para 'l-selectLocal'
+            var cidade = localStorage.getItem('l-selectLocal');
             var email = localStorage.getItem('l-email');
             var nome = localStorage.getItem('l-nome');
             var telefone = localStorage.getItem('l-telefone');
             var usuario = localStorage.getItem('l-usuario');
             var usuarioTitle = localStorage.getItem('l-usuario');
 
-            // Atribui os dados aos elementos HTML
-            var div_cidade = document.getElementById('cidade');
-            var div_email = document.getElementById('email');
-            var div_nome = document.getElementById('nome');
-            var div_telefone = document.getElementById('telefone');
-            var div_usuario = document.getElementById('usuario');
-            var div_usuario_title = document.getElementById('usuarioTitle');
+            // Atribui os dados aos placeholders dos inputs
+            document.getElementById('usuarioInput').setAttribute('placeholder', usuario);
+            document.getElementById('nomeInput').setAttribute('placeholder', nome);
+            document.getElementById('emailInput').setAttribute('placeholder', email);
+            document.getElementById('telefoneInput').setAttribute('placeholder', telefone);
+            document.getElementById('cidadeInput').setAttribute('placeholder', cidade);
+            document.getElementById('usuarioTitle').textContent = usuarioTitle;
 
-            if (cidade && email && nome && telefone && usuario) {
-                div_cidade.textContent = cidade;
-                div_email.textContent = email;
-                div_nome.textContent = nome;
-                div_telefone.textContent = telefone;
-                div_usuario.textContent = usuario;
-                div_usuario_title.textContent = usuarioTitle;
-            }
+            // Atribui os dados aos elementos HTML
+            // var div_cidade = document.getElementById('cidade');
+            // var div_email = document.getElementById('email');
+            // var div_nome = document.getElementById('nome');
+            // var div_telefone = document.getElementById('telefone');
+            // var div_usuario = document.getElementById('usuario');
+            // var div_usuario_title = document.getElementById('usuarioTitle');
+
+            // if (cidade && email && nome && telefone && usuario) {
+            //     div_cidade.textContent = cidade;
+            //     div_email.textContent = email;
+            //     div_nome.textContent = nome;
+            //     div_telefone.textContent = telefone;
+            //     div_usuario.textContent = usuario;
+            //     div_usuario_title.textContent = usuarioTitle;
+            // }
         });
     </script>
 
