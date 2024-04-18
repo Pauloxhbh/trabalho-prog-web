@@ -109,24 +109,24 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <form id='form'>
+          <form id='form' action="http://localhost:3000/salvar" method="post">
             <div>
-              <input type="text" placeholder="Usuário" id="usuario" />
+              <input type="text" placeholder="Usuário" name="usuario" id="usuario" />
             </div>
             <div>
-              <input type="text" placeholder="Nome" id="nome" />
+              <input type="text" placeholder="Nome" name="nome" id="nome" />
             </div>
             <div>
-              <input type="email" placeholder="Email" id="email" />
+              <input type="email" placeholder="Email" name="email" id="email" />
             </div>
             <div>
-              <input type="password" placeholder="Senha" id="senha" />
+              <input type="password" placeholder="Senha" name="senha" id="senha" />
             </div>
             <div>
-              <input type="password" placeholder="Confirme a senha" id="conf_senha">
+              <input type="password" placeholder="Confirme a senha" name="conf_senha" id="conf_senha">
             </div>
             <div>
-              <input type="number" placeholder="Telefone" id="telefone">
+              <input type="number" placeholder="Telefone" name="telefone" id="telefone">
             </div>
             <div>
               <select name="local" id="selectLocal" class="setLocal">
@@ -150,7 +150,7 @@
             </div>
 
             <div class="d-flex ">
-              <button id="btn-enviar">
+              <button type=submit id="btn-enviar">
                 CRIAR CONTA
               </button>
           </form>
@@ -367,7 +367,7 @@
     var btnEnviar = document.getElementById('btn-enviar');
 
     document.getElementById('form').addEventListener('submit', function (event) {
-      event.preventDefault();
+      // event.preventDefault();
 
       var senha = document.getElementById('senha').value;
       var email = document.getElementById('email').value;
@@ -415,9 +415,11 @@
       }
       localStorage.setItem('l-selectLocal', selectLocal);
 
-      if (todasCondicoesAtendidas) {
+      console.log("sucesso");
+
+      /* if (todasCondicoesAtendidas) {
         window.location.href = 'login.html';
-      }
+      } */
     });
 
   //const mensagemDiv = document.getElementById('mensagem');
